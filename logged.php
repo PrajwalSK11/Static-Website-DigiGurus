@@ -8,6 +8,7 @@ if (isset($_SESSION["user_id"])) {
 }
 ?>
 
+
 <!doctype html>
 <html lang="en">
 
@@ -17,10 +18,9 @@ if (isset($_SESSION["user_id"])) {
 
    <!-- Bootstrap CSS -->
    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
-   <!-- <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'> -->
    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-   <link rel="stylesheet" href="css/loggedcss.css">
+   <link rel="stylesheet" href="css/logged.css">
 
    <title>Dreamweaver|Dreamweaver.com</title>
 
@@ -28,16 +28,26 @@ if (isset($_SESSION["user_id"])) {
 
 <body data-bs-spy="scroll" data-bs-target=".navbar">
 
-   <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-info">
+   <nav class="navbar fixed-top navbar-expand-lg navbar-light ">
       <div class="container-fluid">
          <a class="navbar-brand logo-text" href="logged.php">DigiGurus</a>
          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
          </button>
+
+         <div class="user">
+            <?php if (isset($_SESSION["uname"])) { ?>
+               Welcome
+               <?php echo $_SESSION["uname"]; ?>
+            <?php } ?>
+         </div>
+
          <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto">
 
+               <li class="nav-item user">
+               </li>
                <li class="nav-item">
                   <a class="nav-link" href="#shome">Home</a>
                </li>
@@ -53,22 +63,14 @@ if (isset($_SESSION["user_id"])) {
                <li class="nav-item ">
                   <a class="nav-link" href="#contact">Contact</a>
                </li>
-               <li class="nav-item user">
-                  <?php if (isset($_SESSION["uname"])) { ?>
-                     Welcome
-                     <?php echo $_SESSION["uname"]; ?>
-                  <?php } ?>
-               </li>
                <li class="nav-item ">
-                  <a href="logout.php" class="btn btn-success rounded-pill">Logout</a>
+                  <a href="logout.php" class="btn">Logout</a>
                </li>
+
             </ul>
          </div>
       </div>
    </nav>
-
-
-
 
    <!-- INTRO -->
    <section id="shome" class="shome">
@@ -77,11 +79,9 @@ if (isset($_SESSION["user_id"])) {
          <div class="row justify-content-center">
 
             <div class="col-md-7">
-
-
-
-               <h1 class="text-warning display-4">Your Gateway to a Successful Career</h1>
-               <p class="text-white">The first step to building a successful career is to identify your goals. Be
+               <h1 class="title display-4">Your Gateway to a Successful Career</h1>
+               <p class="text-white fw-bold">The first step to building a successful career is to identify your goals.
+                  Be
                   specific about what you want to achieve and set measurable targets to help you track your progress.
                   Make sure your goals are realistic and align with your skills, interests, and values.</p>
                <a href="#contact" class="btn btn-brand">Contact</a>
@@ -89,6 +89,7 @@ if (isset($_SESSION["user_id"])) {
 
          </div>
       </div>
+
    </section>
 
 
@@ -99,12 +100,13 @@ if (isset($_SESSION["user_id"])) {
          <div class="row">
             <div class="col-12 section-intro">
                <h1 class="label">Our Services</h1>
-               <div class="hline1"></div>
+               <div class="hline"></div>
             </div>
          </div>
       </div>
 
       <div class="card-main-container row">
+
          <div class="card col-lg-4"><img src="img/coding.jpg" alt="image" style="width: 100%;">
             <h4 class="text-black text-center">CODING</h4>
             <div class="data">
@@ -210,7 +212,9 @@ if (isset($_SESSION["user_id"])) {
                </div>
             </div>
          </div>
+
       </div>
+
    </section>
 
 
@@ -218,11 +222,14 @@ if (isset($_SESSION["user_id"])) {
    <!-- WORK EXAMPLES -->
    <div class="sl">
       <section id="examples" class="slide ">
+
          <div class="col-12 section-intro">
             <h1>SOME PHOTOGRAPHY EXAMPLES</h1>
-            <div class="hline"></div>
+            <div class="hline1"></div>
          </div>
+
          <div id="carouselExample" class="carousel slide">
+
             <div class="carousel-indicators">
                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
                   aria-current="true" aria-label="Slide 1"></button>
@@ -235,6 +242,7 @@ if (isset($_SESSION["user_id"])) {
                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4"
                   aria-label="Slide 5"></button>
             </div>
+
             <div class="carousel-inner">
                <div class="carousel-item active">
                   <img src="img/e1.jpeg" class="d-block w-100" alt="...">
@@ -252,24 +260,31 @@ if (isset($_SESSION["user_id"])) {
                   <img src="img/e5.jpg" class="d-block w-100" alt="...">
                </div>
             </div>
+
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                <span class="visually-hidden">Previous</span>
             </button>
+
             <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
                <span class="carousel-control-next-icon" aria-hidden="true"></span>
                <span class="visually-hidden">Next</span>
             </button>
+
          </div>
+
       </section>
 
 
       <section id="examples1" class="slide1">
+
          <div class="col-12 section-intro">
             <h1>SOME UI EXAMPLES</h1>
-            <div class="hline"></div>
+            <div class="hline1"></div>
          </div>
+
          <div id="carouselExample1" class="carousel slide">
+
             <div class="carousel-indicators">
                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
                   aria-current="true" aria-label="Slide 1"></button>
@@ -280,6 +295,7 @@ if (isset($_SESSION["user_id"])) {
                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3"
                   aria-label="Slide 4"></button>
             </div>
+
             <div class="carousel-inner">
                <div class="carousel-item active">
                   <img src="img/ui1.jpeg" class="d-block w-100" alt="...">
@@ -294,36 +310,45 @@ if (isset($_SESSION["user_id"])) {
                   <img src="img/ui4.jpeg" class="d-block w-100" alt="...">
                </div>
             </div>
+
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample1" data-bs-slide="prev">
                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                <span class="visually-hidden">Previous</span>
             </button>
+
             <button class="carousel-control-next" type="button" data-bs-target="#carouselExample1" data-bs-slide="next">
                <span class="carousel-control-next-icon" aria-hidden="true"></span>
                <span class="visually-hidden">Next</span>
             </button>
+
          </div>
+
       </section>
+
    </div>
 
    <!-- FEATURES -->
 
-   <div class="ex">
+   <div class="featureall">
+
       <section id="features">
+
          <div class="container">
+
             <div class="row">
-               <div class="col-12 section-intro">
-                  <h1>Our Features</h1>
+               <div class="col-12 section-intro feature ">
+                  <h1 class="text-white">Our Features</h1>
                   <div class="hline"></div>
                </div>
             </div>
+
             <div class="row gy-4">
                <div class="col-lg-4 col-sm-6 feature d-flex">
                   <div class="icon-box me-3">
                      <i class='bx bxs-right-arrow' style='color:#0dcaf0'></i>
                   </div>
                   <div>
-                     <h5 class="title-md">All courses at one place</h5>
+                     <h5 class="title-md text-white">All courses at one place</h5>
                      <p> Makes it easier for individuals and businesses to find the education and training they need to
                         improve their skills, knowledge, and performance.
                      </p>
@@ -334,7 +359,7 @@ if (isset($_SESSION["user_id"])) {
                      <i class='bx bxs-right-arrow' style='color:#0dcaf0'></i>
                   </div>
                   <div>
-                     <h5 class="title-md">Best Courses suggestions</h5>
+                     <h5 class="title-md text-white">Best Courses suggestions</h5>
                      <p>Suggestions can help clients save time and effort in choosing the right courses for their
                         specific
                         needs.
@@ -346,7 +371,7 @@ if (isset($_SESSION["user_id"])) {
                      <i class='bx bxs-right-arrow' style='color:#0dcaf0'></i>
                   </div>
                   <div>
-                     <h5 class="title-md">Reliable study material</h5>
+                     <h5 class="title-md text-white">Reliable study material</h5>
                      <p>It refers to educational content and resources that are trustworthy, accurate, and relevant to
                         the
                         courses or programs being offered. This can include textbooks, guides, online modules, videos,
@@ -359,7 +384,7 @@ if (isset($_SESSION["user_id"])) {
                      <i class='bx bxs-right-arrow' style='color:#0dcaf0'></i>
                   </div>
                   <div>
-                     <h5 class="title-md">No need of any membership</h5>
+                     <h5 class="title-md text-white">No need of any membership</h5>
                      <p>It means that clients can access the consultancy's services and resources without having to pay
                         for
                         a membership or subscription fee. This suggests that the consultancy offers a pay-per-use or
@@ -372,7 +397,7 @@ if (isset($_SESSION["user_id"])) {
                      <i class='bx bxs-right-arrow' style='color:#0dcaf0'></i>
                   </div>
                   <div>
-                     <h5 class="title-md">Free Career guidance</h5>
+                     <h5 class="title-md text-white">Free Career guidance</h5>
                      <p>It refers to the provision of professional advice and support to individuals who are seeking
                         guidance in their career choices or transitions, at no cost. This guidance may include advice on
                         job search strategies, resume writing, interview preparation, career planning, and other related
@@ -384,28 +409,35 @@ if (isset($_SESSION["user_id"])) {
                      <i class='bx bxs-right-arrow' style='color:#0dcaf0'></i>
                   </div>
                   <div>
-                     <h5 class="title-md">Free Learning</h5>
+                     <h5 class="title-md text-white">Free Learning</h5>
                      <p>By offering free learning opportunities, the consultancy is likely trying to attract potential
                         clients who may be seeking to improve their skills and knowledge, but may not have the financial
                         resources to pay for private education or training.</p>
                   </div>
                </div>
             </div>
+
          </div>
+
       </section>
+
    </div>
 
    <!-- CONTACT US  -->
    <section id="contact">
+
       <div class="container">
          <div class="row align-items-center">
+
             <div class="col-12 section-cnt">
                <h1>Contact Us</h1>
-               <div class="hline"></div>
+               <div class="hline1"></div>
             </div>
+
             <div class="col-lg-4">
                <img class="cnt-img" src="img/cnt.jpeg" alt="...">
             </div>
+
             <div class="col-lg-6 offset-lg-1">
 
                <form name="myform" action="http://localhost/Digigurus/Dreamdata.php" method="post">
@@ -435,35 +467,36 @@ if (isset($_SESSION["user_id"])) {
             </div>
          </div>
       </div>
+
    </section>
 
    <!-- RANDOM SENTENCE -->
-   <section id="cta" class="py-1">
-
-   </section>
+   <section id="cta" class="py-1"></section>
 
    <!-- FOOTER PART -->
    <footer>
       <div class="footer-top">
          <div class="container">
             <div class="row">
+
                <div class="col-md-4">
                   <h4 class="logo-text-sm" style="font-family: Arial, Helvetica, sans-serif;">DigiGurus</h4>
                   <div class="social-icons ">
                      <div class="sociali-icons">
-                        <a href="https://www.instagram.com/"><i class='bx bxl-instagram bx-md bx-spin'></i></a>
+                        <a href="https://www.instagram.com/"><i class='bx bxl-instagram bx-md '></i></a>
                      </div>
                      <div class="socialt-icons">
-                        <a href="https://twitter.com/"><i class='bx bxl-twitter bx-md bx-spin'></i></a>
+                        <a href="https://twitter.com/"><i class='bx bxl-twitter bx-md '></i></a>
                      </div>
                      <div class="socialf-icons">
-                        <a href="https://www.facebook.com/"><i class='bx bxl-facebook bx-md bx-spin'></i></a>
+                        <a href="https://www.facebook.com/"><i class='bx bxl-facebook bx-md '></i></a>
                      </div>
                      <div class="socialw-icons">
-                        <a href="https://www.whatsapp.com/"><i class='bx bxl-whatsapp bx-md bx-spin'></i></a>
+                        <a href="https://www.whatsapp.com/"><i class='bx bxl-whatsapp bx-md '></i></a>
                      </div>
                   </div>
                </div>
+
                <div class="col-md-2">
                   <h5 class="title-sm">Navigation</h5>
                   <div class="footer-links">
@@ -473,6 +506,7 @@ if (isset($_SESSION["user_id"])) {
                      <a href="#">Blog</a>
                   </div>
                </div>
+
                <div class="col-md-2">
                   <h5 class="title-sm">More</h5>
                   <div class="footer-links">
@@ -481,6 +515,7 @@ if (isset($_SESSION["user_id"])) {
                      <a href="#">Liscences</a>
                   </div>
                </div>
+
                <div class="col-md-3">
                   <h5 class="title-sm">Contact</h5>
                   <div class="footer-links">
@@ -489,29 +524,30 @@ if (isset($_SESSION["user_id"])) {
                      <p class="mb">mainkyubatau@gmail.com</p>
                   </div>
                </div>
+
             </div>
          </div>
       </div>
-
-      <!-- ************** -->
    </footer>
+
+   <!-- ************************************************************ -->
+   <!-- FOOTER BOTTOM-->
    <div class="footer-bottom">
       <div class="container">
+
          <div class="row">
             <div class="text-center">
                <p class="mb-0">© Designed and developed by ❤️ by SS | Copyright ©2023 All rights reserved.</p>
             </div>
          </div>
+
       </div>
    </div>
-   </footer>
 
    <script src="script.js"></script>
    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
-
-
 </body>
 
 </html>

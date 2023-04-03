@@ -32,7 +32,7 @@
                   Make sure your goals are realistic and align with your skills, interests, and values.</p>
                <li type='none'>
                   <a href="login.php" class="btn">Login</a>
-                  <a href="regis.html" class="btn">register</a>
+                  <a href="regis.html" class="btn">Register</a>
                </li>
             </div>
          </div>
